@@ -1,21 +1,24 @@
 # Jonathan Li
 menu_selection = ""
 
+# encoder Function
 def encoder(password):
     encoded_pass = ""
     for i in password:
         value = int(i) + 3
-        if value >= 10:
+        if value >= 10:  # cannot have value greater than 9 in any password
             value -= 10
         encoded_pass += str(value)
     return encoded_pass
 
+# menu function
 def menu():
     print("Menu")
     print("-------------")
     print("1. Encode\n2. Decode\n3. Quit")
 
 
+# global function
 if __name__ == "__main__":
     while menu_selection != 3:
         menu()
