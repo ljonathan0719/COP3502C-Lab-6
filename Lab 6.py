@@ -24,9 +24,9 @@ def menu():
 def decoder(encoded_pass):
     decoded_pass = ''
     for num in encoded_pass:
-        value = int(num) + 3
-        if value >= 10:  # cannot have value greater than 9 in any password
-            value -= 10
+        value = int(num) - 3
+        if value <= 0:  # cannot have value greater than 9 in any password
+            value += 10
         decoded_pass += str(value)
 
     return decoded_pass
@@ -34,7 +34,7 @@ def decoder(encoded_pass):
 
 # global function
 if __name__ == "__main__":
-    menu_selection = menu()
+    menu_selection = 0
     while menu_selection != 3:
         menu()
         menu_selection = input("Please enter an option: ")
